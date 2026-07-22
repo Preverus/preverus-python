@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "preverus"
-version = "0.1.0"
+version = "0.1.1"
 description = "Python client for Preverus fraud decisions, events, lookups, and webhooks."
 readme = "README.md"
 requires-python = ">=3.9"
@@ -21,6 +21,12 @@ classifiers = [
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
 ]
+
+[project.urls]
+Homepage = "https://preverus.com"
+Documentation = "https://preverus.com/docs"
+Source = "https://github.com/preverus/preverus-python"
+Issues = "https://github.com/preverus/preverus-python/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]

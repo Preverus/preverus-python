@@ -2,6 +2,9 @@
 
 Python client for Preverus backend enforcement.
 
+Website: https://preverus.com  
+Documentation: https://preverus.com/docs
+
 Use this package with Django, Flask, FastAPI, or any Python backend that loads the hosted Preverus browser script on the frontend and needs trusted server-side fraud decisions.
 
 ## Install
@@ -18,7 +21,7 @@ Add the hosted script to your HTML template:
 
 ```html
 <script
-  src="https://cdn.preverus.com/v1/preverus.js"
+  src="https://api.preverus.com/v1/preverus.js"
   data-preverus-key="pk_live_xxx"
   data-preverus-auto="true"
   data-preverus-track-forms="true"
