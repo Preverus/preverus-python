@@ -209,6 +209,8 @@ visitor = client.visitors.lookup(fingerprint="fp_hash")
 
 metadata = client.metadata.lookup("email", "person@example.com")
 graph = client.metadata.graph("v_abc123")
+
+user_risk_profile = client.lookup_user_risk_profile("acct_42")
 ```
 
 Use lookups for investigation and context. Use `decisions.evaluate()` for final enforcement.

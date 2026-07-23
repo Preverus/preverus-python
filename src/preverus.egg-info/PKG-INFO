@@ -1,9 +1,13 @@
 Metadata-Version: 2.1
 Name: preverus
-Version: 0.1.0
+Version: 0.1.2
 Summary: Python client for Preverus fraud decisions, events, lookups, and webhooks.
 Author: Preverus
 License: MIT
+Project-URL: Homepage, https://preverus.com
+Project-URL: Documentation, https://preverus.com/docs
+Project-URL: Source, https://github.com/preverus/preverus-python
+Project-URL: Issues, https://github.com/preverus/preverus-python/issues
 Keywords: preverus,fraud,risk,fingerprint,laravel,django,flask
 Classifier: Development Status :: 3 - Alpha
 Classifier: Intended Audience :: Developers
@@ -19,6 +23,9 @@ Description-Content-Type: text/markdown
 # Preverus Python
 
 Python client for Preverus backend enforcement.
+
+Website: https://preverus.com  
+Documentation: https://preverus.com/docs
 
 Use this package with Django, Flask, FastAPI, or any Python backend that loads the hosted Preverus browser script on the frontend and needs trusted server-side fraud decisions.
 
@@ -36,7 +43,7 @@ Add the hosted script to your HTML template:
 
 ```html
 <script
-  src="https://cdn.preverus.com/v1/preverus.js"
+  src="https://api.preverus.com/v1/preverus.js"
   data-preverus-key="pk_live_xxx"
   data-preverus-auto="true"
   data-preverus-track-forms="true"
@@ -224,6 +231,8 @@ visitor = client.visitors.lookup(fingerprint="fp_hash")
 
 metadata = client.metadata.lookup("email", "person@example.com")
 graph = client.metadata.graph("v_abc123")
+
+user_risk_profile = client.lookup_user_risk_profile("acct_42")
 ```
 
 Use lookups for investigation and context. Use `decisions.evaluate()` for final enforcement.

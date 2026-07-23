@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+from urllib.parse import quote
+
+from .results import ApiResult
 from .http import HttpClient
 from .resources import Decisions, Events, Metadata, Visitors, Webhooks
 
@@ -28,3 +31,6 @@ class Client:
         self.visitors = Visitors(self._http)
         self.metadata = Metadata(self._http)
         self.webhooks = Webhooks()
+
+    def lookup_user_risk_profile(self, external_user_id: str) -> ApiResult:
+        return ApiResult(self._http.get(f"/v1/users/{quote(external_user_id, safe='')}/risk-profile"))
